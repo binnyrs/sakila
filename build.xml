@@ -1,0 +1,16 @@
+<project name="sakila" default="configure" basedir=".">
+    <target name="configure" description="Download dependencies, and configure app">
+        <mkdir dir="xataface"/>
+        <exec dir="." executable="git">
+            <arg value="clone"/>
+            <arg value="https://github.com/shannah/xataface"/>
+        </exec>
+        <exec dir="xataface" executable="git">
+            <arg value="pull"/>
+            <arg value="origin"/>
+            <arg value="master"/>
+        </exec>
+        <mkdir dir="templates_c"/>
+        <chmod dir="templates_c" perm="777"/>
+    </target>
+</project>
